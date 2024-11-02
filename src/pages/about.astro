@@ -1,0 +1,180 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="About | Valentin DORARD" description="About Valentin DORARD">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="About"
+				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/CV.jpg"
+					alt=""
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Background</h2>
+				<div class="content">
+					<p>
+						I'm a 21 year-old engineering student at Institut Polytechnique de Paris specializing in High Tech Imaging.
+						<br>
+						<br>
+					</p>
+					<p>
+						I'm a third year French student at the engineering school <strong><a href="https://www.telecom-sudparis.eu" target="_blank">Télécom-SudParis</a></strong> (M2). 
+						<br>
+						<br>
+
+						I discovered the joy of hard work after three years of preparatory classes. From now on, I'm specialized in Computer Vision (Deep learning, Image processing). But i also had the chances to study a lot of domains, such as Mathematics, Cyber-security, Networks and Telecoms 
+						<br>
+						<br>
+						At the same time, I am also pursuing a master's degree at the Polytechnic Institute of Paris, specialized in computer vision and VR/AR. 
+						<br>
+						<br>
+					</p>
+					<p>
+						I have experience with a lot of software and programming languages, such as Python, C++, Java, CUDA, OpenCV, Tensorflow, Pytorch, etc...
+					</p>
+					
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Education</h2>
+				<div class="content">
+					<li>
+						
+						<p><strong>Telecom SudParis</strong></p>
+	
+						Master of Science in Engineering (M2) -<strong><a href="https://www.telecom-sudparis.eu/formation/high-tech-imaging/" target="_blank">High Tech Imaging</a></strong>
+						<br>
+						AI, Computer Vision, Image processing.
+						<br>
+						(On Going) - 2025
+						
+					</li>
+					<br>
+					<br>
+					<li>
+						<p><strong>Institut Polytechnique de Paris</strong>
+							<br>
+							Master of Science in Engineering (M2) - Virtual and Augmented Reality (VAR)
+							<br>
+							Augmented Reality, Virtual Reality, Computer Vision, Artificial Intelligence
+							<br>
+							(On Going) - 2025
+						</p>
+
+					</li>
+					<br>
+					<br>
+					<li>
+						<p>
+							<strong>Preparatory Class - Lycée Camille Guérin</strong>
+							<br>
+							Intensive three-year study course preparing for the competitive entrance examinations to the French 'Grandes Écoles' (the top French and highly-selective institutions)
+
+							Mathematical, Physics and Engineering Sciences track
+
+							(2019 - 2022)
+						</p>
+					</li>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Skills</h2>
+				<div class="content">
+					<p><li><strong>Languages</strong>
+						Native French. Strong reading, writing and speaking competencies for English, and basis  comprehension of Spanish and Korean.
+					<br>
+				</li></p>
+					<br>
+					<br> 
+					<li><strong>Software</strong>
+						Software : Blender, Unity, Adobe Suite(Photoshop, Premiere), Powerapps.
+					</li>
+					<br>
+					<br>
+					<li><strong>Coding : </strong>
+						Python, C++, Java, CUDA, OpenCV, Tensorflow, Pytorch, HTML, CSS, Javascript. 
+					</li>
+					<br>
+					<br> 
+					<li><strong>Artificial Intelligence (AI):</strong>
+						<br>
+					Knowledge of AI concepts and algorithms, including machine learning, deep learning, and neural networks, such as CNN, GNN, GAT.
+					</li>
+					 
+
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
